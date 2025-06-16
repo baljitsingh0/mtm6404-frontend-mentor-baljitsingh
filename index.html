@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./output.css" />
+    <script src="./script.js" defer></script>
+    <title>News homepage</title>
+  </head>
+  <body>
+    <header
+      class="flex flex-row items-center justify-between px-4 py-6 sm:px-20 sm:py-8 xl:px-40 xl:pb-16 xl:pt-24"
+    >
+      <img src="./assets/images/logo.svg" alt="News site logo" class="logo" />
+      <button
+        class="hamburger-menu menu-icon"
+        id="hamburger-menu"
+        aria-label="Open navigation menu"
+        aria-controls="nav"
+      >
+        <svg aria-hidden="true" focusable="false">
+          <use href="./assets/images/sprite.svg#hamburger"></use>
+        </svg>
+      </button>
+      <button
+        id="close-menu"
+        class="hidden close-menu menu-icon"
+        aria-label="Close navigation menu"
+        aria-controls="nav"
+        aria-hidden="true"
+      >
+        <svg aria-hidden="true" focusable="false">
+          <use href="./assets/images/sprite.svg#close"></use>
+        </svg>
+      </button>
+      <nav id="nav" class="hidden" aria-hidden="true">
+        <ul>
+          <li><a href="#home" class="nav-item">Home</a></li>
+          <li><a href="#new" class="nav-item">New</a></li>
+          <li><a href="#popular" class="nav-item">Popular</a></li>
+          <li><a href="#trending" class="nav-item">Trending</a></li>
+          <li><a href="#categories" class="nav-item">Categories</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="grid px-4 sm:px-20 xl:px-40">
+      <section class="grid main__story">
+        <picture>
+          <source
+            media="(min-width: 40em)"
+            srcset="./assets/images/image-web-3-desktop.jpg"
+          />
+          <img
+            src="./assets/images/image-web-3-mobile.jpg"
+            alt="A colorful, abstract image with a cartoon-ish tech undertone."
+            width="686"
+            height="600"
+            class="mb-6 w-auto"
+          />
+        </picture>
+        <h1 class="text-preset-2 xl:text-preset-1">
+          The Bright Future of Web 3.0?
+        </h1>
+        <div class="main__story__summary">
+          <p class="text-preset-6 text-navy-600">
+            We dive into the next evolution of the web that claims to put the
+            power of the platforms back into the hands of the people. But is it
+            really fulfilling its promise?
+          </p>
+          <button class="main__btn btn btn--cta">Read more</button>
+        </div>
+      </section>
+      <article class="bg-navy-950 px-6 py-4 xl:py-6 new-stories">
+        <h1 class="text-preset-3 text-gold mb-8">New</h1>
+        <article class="new-stories__article group">
+          <h2 class="text-preset-4 text-white group-hover:text-gold">
+            Hydrogen VS Electric Cars
+          </h2>
+          <p class="text-preset-6 text-grey-300">
+            Will hydrogen-fueled cars ever catch up to EVs?
+          </p>
+          <hr />
+        </article>
+        <article class="new-stories__article group">
+          <h2 class="text-preset-4 text-white group-hover:text-gold">
+            The Downsides of AI Artistry
+          </h2>
+          <p class="text-preset-6 text-grey-300">
+            What are the possible adverse effects of on-demand AI image
+            generation?
+          </p>
+          <hr />
+        </article>
+        <article class="new-stories__article group">
+          <h2 class="text-preset-4 text-white group-hover:text-gold">
+            Is VC Funding Drying Up?
+          </h2>
+          <p class="text-preset-6 text-grey-300">
+            Private funding by VC firms is down 50% YOY. We take a look at what
+            that means.
+          </p>
+        </article>
+      </article>
+      <article class="mb-16 flex flex-col gap-8 xl:flex-row articles">
+        <article class="articles__article group">
+          <img
+            src="./assets/images/image-retro-pcs.jpg"
+            alt="Cartoon-ish photo of a desktop with various older PCs."
+          />
+          <h1>01</h1>
+          <h2 class="group-hover:text-red">Reviving Retro PCs</h2>
+          <p>What happens when old PCs are given modern upgrades?</p>
+        </article>
+        <article class="articles__article group">
+          <img
+            src="./assets/images/image-top-laptops.jpg"
+            alt="Black keyboard with red letters."
+          />
+          <h1>02</h1>
+          <h2 class="group-hover:text-red">Top 10 Laptops of 2022</h2>
+          <p>Our best picks for various needs and budgets.</p>
+        </article>
+        <article class="articles__article group">
+          <img
+            src="./assets/images/image-gaming-growth.jpg"
+            alt="Hand tossing a playstation controller in the air.."
+          />
+          <h1>03</h1>
+          <h2 class="group-hover:text-red">The Growth of Gaming</h2>
+          <p>How the pandemic has sparked fresh opportunities.</p>
+        </article>
+      </article>
+    </main>
+
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="https://www.github.com/kmulqueen">Kyle Mulqueen</a>.
+    </footer>
+  </body>
+</html>
