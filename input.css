@@ -1,0 +1,263 @@
+@import "tailwindcss";
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  src: url("./assets/fonts/Inter-VariableFont_slnt\,wght.ttf")
+    format("truetype");
+}
+@theme {
+  --color-white: hsl(0, 100%, 100%);
+  --color-black: hsl(0, 0%, 0%);
+  --color-grey-200: hsl(0, 0%, 85%);
+  --color-grey-300: hsl(233, 8%, 79%);
+  --color-navy-600: hsl(236, 13%, 42%);
+  --color-navy-950: hsl(240, 100%, 5%);
+  --color-gold: hsl(35, 77%, 62%);
+  --color-red: hsl(4, 85%, 63%);
+}
+
+@utility text-preset-1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: 0px;
+  line-height: 1;
+}
+
+@utility text-preset-2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: 0px;
+  line-height: 1;
+}
+
+@utility text-preset-3 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0px;
+  line-height: 1;
+}
+
+@utility text-preset-4 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: 0px;
+  line-height: 1;
+}
+
+@utility text-preset-5 {
+  font-size: 1.125rem;
+  font-weight: 800;
+  letter-spacing: 0px;
+  line-height: 1.33;
+}
+
+@utility text-preset-5-reg {
+  font-size: 1.125rem;
+  font-weight: 400;
+  letter-spacing: 0px;
+  line-height: 1.33;
+}
+
+@utility text-preset-6 {
+  font-size: 0.93755rem;
+  font-weight: 400;
+  letter-spacing: 0px;
+  line-height: 1.733;
+}
+
+@utility text-preset-7 {
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 4.38px;
+  line-height: 1.714;
+}
+
+@layer components {
+  .menu-icon {
+    z-index: 1;
+  }
+  .hamburger-menu {
+    height: 1.25rem;
+    width: 2.5rem;
+    cursor: pointer;
+  }
+
+  .close-menu {
+    height: 2rem;
+    width: 2rem;
+    cursor: pointer;
+  }
+
+  .nav-desktop {
+    position: unset;
+    min-height: unset;
+    padding: unset;
+    width: unset;
+  }
+
+  .nav-desktop > ul {
+    display: flex;
+  }
+
+  .nav-item {
+    @apply text-preset-5-reg text-navy-950 hover:text-red focus:text-red focus-visible:text-red xl:text-navy-600;
+  }
+
+  .btn {
+    @apply cursor-pointer bg-red px-8 py-2 text-preset-7 text-navy-950 uppercase;
+  }
+
+  .new-stories__article {
+    @apply flex cursor-pointer flex-col gap-2;
+  }
+
+  .articles__article {
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: repeat(3, min-content);
+    grid-template-areas:
+      "picture number"
+      "picture heading"
+      "picture summary";
+    column-gap: 1.5rem;
+    row-gap: 0.5rem;
+  }
+  .articles__article > img {
+    grid-area: picture;
+    max-height: 8rem;
+  }
+  .articles__article > h1 {
+    grid-area: number;
+    @apply text-preset-3 text-red;
+  }
+  .articles__article > h2 {
+    grid-area: heading;
+    @apply text-preset-5 text-navy-950;
+  }
+  .articles__article > p {
+    grid-area: summary;
+    @apply text-preset-6 text-navy-600;
+  }
+}
+@layer base {
+  html {
+    font-family: "Inter";
+  }
+  /* Controlling the SVG element size for the nav menu buttons */
+  #hamburger-menu > svg:nth-child(1) {
+    width: 2.5rem;
+    height: 1.125rem;
+  }
+  #close-menu > svg:nth-child(1) {
+    height: 2rem;
+    width: fit-content;
+  }
+
+  nav {
+    position: fixed;
+    background-color: var(--color-white);
+    right: 0;
+    top: 0;
+    padding: calc(1.5rem + 2rem + 5.5rem) 1.25rem 0;
+    min-height: 100vh;
+    width: 68%;
+    @apply md:w-[40%];
+  }
+
+  nav > ul {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  main {
+    grid-template-areas:
+      "main-story"
+      "new-stories"
+      "articles";
+    row-gap: 4rem;
+  }
+
+  hr {
+    border-color: var(--color-navy-600);
+    @apply my-8;
+  }
+}
+
+.main__story {
+  grid-area: main-story;
+  grid-template-areas:
+    "picture"
+    "heading"
+    "summary";
+  row-gap: 1.5rem;
+}
+
+.main__story > picture {
+  grid-area: picture;
+}
+
+.main__story > h1 {
+  grid-area: heading;
+}
+
+.main__story__summary {
+  grid-area: summary;
+  display: grid;
+  grid-template-rows: min-content min-content;
+  grid-template-areas:
+    "text"
+    "button-cta";
+  row-gap: 1.5rem;
+}
+
+.main__btn {
+  grid-area: button-cta;
+  width: fit-content;
+  @apply hover:bg-navy-950 hover:text-white focus:bg-navy-950 focus:text-white focus-visible:bg-navy-950 focus-visible:text-white active:bg-navy-950 active:text-white;
+}
+
+.new-stories {
+  grid-area: new-stories;
+}
+
+.articles {
+  grid-area: articles;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+.attribution a {
+  @apply text-navy-950 hover:text-red focus:text-red;
+}
+
+@media (min-width: 80rem) {
+  main {
+    grid-template-areas:
+      "main-story main-story new-stories"
+      "main-story main-story new-stories"
+      "articles articles articles";
+
+    grid-template-rows: repeat(3, 1fr);
+    column-gap: 2rem;
+  }
+
+  .main__story {
+    grid-template-areas:
+      "picture picture"
+      "heading summary";
+    row-gap: unset;
+    column-gap: 2rem;
+  }
+
+  .main__story__summary {
+    row-gap: 2rem;
+  }
+
+  .articles__article {
+    row-gap: unset;
+  }
+}
