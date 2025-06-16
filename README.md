@@ -1,5 +1,5 @@
 # Frontend Mentor Challenge
 
 **Name:** Baljit Singh  
-**Student Number:** [Your Student ID]  
-**Challenge:** [Insert the full name of the selected challenge here]  
+**Student Number:** 90541134755
+**Challenge:** Blogr Landing Page – Frontend Mentor 
